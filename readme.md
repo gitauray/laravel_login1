@@ -33,4 +33,10 @@
 <ul>
 <li>Logs out if page idle</li>
 </ul>
+
+<li>Site:</li>
+<ul>
+<li>html + css + bootstrap + js + php + mysql</li>
+</ul>    
+    
 </ol>
