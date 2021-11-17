@@ -31,7 +31,7 @@ Route::group(['middleware' => ['auth', 'user'], 'prefix' => 'user'], function ()
 
 // admin protected routes
 Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
-    Route::get('/', 'HomeController@index')->name('admin_dashboard');
+    Route::get('/', 'AdminController@index')->name('admin_dashboard');
 });
 Route::get('/redirect', 'SocialAuthGoogleController@redirect');
 Route::get('/callback', 'SocialAuthGoogleController@callback');
