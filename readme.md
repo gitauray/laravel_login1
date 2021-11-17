@@ -34,9 +34,9 @@
 <li>Logs out if page idle</li>
 </ul>
 
-<li>Site:</li>
+<li>Site: Laravel</li>
 <ul>
-<li>html + css + bootstrap + js + php + mysql</li>
+<li>HTML5 + CSS3 + BOOTSTRAP + JS + PHP + MYSQL</li>
 </ul>    
     
 </ol>
