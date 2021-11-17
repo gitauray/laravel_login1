@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 19, 2019 at 11:21 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Host: localhost
+-- Generation Time: Nov 17, 2021 at 03:17 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 7.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `laravel_social_login`
+-- Database: `lara_test3`
 --
 
 -- --------------------------------------------------------
@@ -75,9 +75,9 @@ CREATE TABLE `social_providers` (
 --
 
 INSERT INTO `social_providers` (`id`, `user_id`, `provider_id`, `provider`, `created_at`, `updated_at`) VALUES
-(1, 1, '990696211126613', 'facebook', '2019-04-19 15:02:41', '2019-04-19 15:02:41'),
-(2, 2, '770561824706076672', 'twitter', '2019-04-19 15:09:24', '2019-04-19 15:09:24'),
-(3, 2, '116114447877161528114', 'google', '2019-04-19 15:10:33', '2019-04-19 15:10:33');
+(1, 1, '990696211126613', 'facebook', '2019-04-19 12:02:41', '2019-04-19 12:02:41'),
+(2, 2, '770561824706076672', 'twitter', '2019-04-19 12:09:24', '2019-04-19 12:09:24'),
+(3, 2, '116114447877161528114', 'google', '2019-04-19 12:10:33', '2019-04-19 12:10:33');
 
 -- --------------------------------------------------------
 
@@ -89,6 +89,8 @@ CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `google_id` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `role` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'user',
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -100,9 +102,14 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Obydullah Sarder', 'shishir.dev18@gmail.com', NULL, NULL, NULL, '2019-04-19 15:02:41', '2019-04-19 15:02:41'),
-(2, 'Shishir Sarder', 'shishir.srdr16@gmail.com', NULL, NULL, NULL, '2019-04-19 15:09:24', '2019-04-19 15:09:24');
+INSERT INTO `users` (`id`, `name`, `email`, `google_id`, `role`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Obydullah Sarder', 'shishir.dev18@gmail.com', '', '', NULL, NULL, NULL, '2019-04-19 12:02:41', '2019-04-19 12:02:41'),
+(2, 'Shishir Sarder', 'shishir.srdr16@gmail.com', '', '', NULL, NULL, NULL, '2019-04-19 12:09:24', '2019-04-19 12:09:24'),
+(3, 'Raymond Gitau Ng\'ang\'a', 'gitauray1@gmail.com', '', 'user', NULL, '$2y$10$c/I6o5tO/CaTl0dpeFHoa.Su0VrYEo8BodS9d47JAe8vvdhwtTMXi', NULL, '2021-11-14 08:46:29', '2021-11-14 08:46:29'),
+(4, 'fred', 'ze@gmail.com', '', 'user', NULL, '$2y$10$4XsRwkoDED0yH.NKy5sLa.6iNfUU8ebf0fwAdGp8wim33jC.W7oGe', NULL, '2021-11-16 09:42:42', '2021-11-16 09:42:42'),
+(5, 'pepper', 'pepper@g.com', '', 'user', NULL, '$2y$10$FK5LNBw/EcKrWc.KdRSjdObmCeW/N5g16klDhuexoQYtrQhpZw3ya', NULL, '2021-11-16 09:47:06', '2021-11-16 09:47:06'),
+(6, 'mala', 'maz@ziwa.com', NULL, 'user', NULL, '$2y$10$lxLE5a0ph7wV6dAQrSVbj.3WCaofDjUerQ83ZVDNb4mMeeXpNyFCu', 'Zt1h5IfyJfvMr7wVIh9s9XoZBBLUQuRzDbOibQZYCWRRGXJzqx4oY3LZVfnx', '2021-11-16 10:11:43', '2021-11-16 10:11:43'),
+(7, 'admin', 'admin@admin.com', NULL, 'admin', NULL, '$2y$10$UFtMj0y8ZaeoxcjRxeQHgOQtXux3AthcQ/SlZ5uJvWO9Xfa/BUj6G', 'IvBaxH5OAQEKApnYl1yqHPVFfTDt62wkZfcYmxYcc6reYgYptybkjVLVg4Zz', '2021-11-16 10:29:08', '2021-11-16 10:29:08');
 
 --
 -- Indexes for dumped tables
@@ -153,7 +160,7 @@ ALTER TABLE `social_providers`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
