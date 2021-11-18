@@ -1,7 +1,7 @@
 <ol>
 <li>Installation</li>
 <ul>
-<li>From Terminal: $ git clone https://github.com/gitauray/laravel_login1/tree/master project_name</li>
+<li>From Terminal: $ git clone https://github.com/gitauray/laravel_login1 project_name</li>
 <li>composer install</li>
 <li>config db in .env file and config/databese.php</li>
 <li>php artisan migrate</li>
